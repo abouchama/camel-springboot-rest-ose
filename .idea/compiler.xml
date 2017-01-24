@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="camel-spring-boot-latest" />
+        <module name="camel-springboot-rest-ose" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="camel-spring-boot-latest" target="1.8" />
+      <module name="camel-springboot-rest-ose" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
