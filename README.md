@@ -79,6 +79,8 @@ camel-springboot-rest-os-11-y00ny            0/1       Running     0          3s
 camel-springboot-rest-os-11-y00ny            1/1       Running     0          31s
 ```
 
+![OpenShift Web Console](images/Openshift_Pod_Deployment.png "OpenShift Web Console")
+
 Once the new pod is deployed & Running, you will see the output of our Rest service updated 
 with the new pod running:
 
