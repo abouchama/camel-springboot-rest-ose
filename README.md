@@ -19,7 +19,7 @@ The example can be run locally using the following Maven goal:
     mvn spring-boot:run
 
 
-### Running the example on OpenShift
+### Zero Downtime - Hot Reload of your Camel microservice on OpenShift
 
 It is assumed a running OpenShift platform is already running. If not you can find details how to [get started](http://fabric8.io/guide/getStarted/index.html).
 
@@ -33,9 +33,6 @@ mvn clean install fabric8:deploy -Dfabric8.deploy.createExternalUrls=true fabric
 To list all the running pods:
 
     oc get pods
-
-
-### Use case: Zero Downtime - Hot Reload of your Camel microservice
 
 To invoke the Rest endpoint of your camel microserice every 1 second:
 
