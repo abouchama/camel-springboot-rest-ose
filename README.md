@@ -91,5 +91,18 @@ with the new pod running:
 ```sh
 Hey Abel --> Enjoy your camel microservices | POD : camel-springboot-rest-os-11-y00ny
 ```
+In addition to ZDD, one of the promise of the microservices is to allow to scale easily in order to get better performance of our service, then to do that you have 2 ways to do it:
+
+Using deployment configuration:
+
+```sh
+$ oc scale dc/camel-springboot-rest-os --replicas=10
+deploymentconfig "camel-springboot-rest-os" scaled
+```
+or fabric8 maven plugin:
+
+```sh
+mvn fabric8:start -Dfabric8.replicas=10
+```
 
 Enjoy!!
