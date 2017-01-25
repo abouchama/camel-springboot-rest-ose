@@ -19,7 +19,7 @@ The example can be run locally using the following Maven goal:
     mvn spring-boot:run
 
 
-### Zero Downtime - Hot Reload of your Camel microservice on OpenShift
+### Zero Downtime - Hot Reconfiguration of your Camel microservice on OpenShift
 
 It is assumed a running OpenShift platform is already running. If not you can find details how to [get started](http://fabric8.io/guide/getStarted/index.html).
 
@@ -30,11 +30,18 @@ package your microservice, run it on OpenShift and get the output the logs from 
 mvn clean install fabric8:deploy -Dfabric8.deploy.createExternalUrls=true fabric8:log
 ```
 
-To list all the running pods:
+The goal fabric8:log tails the log of our microservice that’s deployed via the fabric8:deploy goal, and we can check when our micrservice is started.
 
-    oc get pods
+By enabling the following property fabric8.deploy.createExternalUrls it will create an external Url to reach our Rest Endpoint. 
+To get this Url, you have simply to run the following command:
 
-To invoke the Rest endpoint of your camel microserice every 1 second:
+```sh
+$ oc get route
+NAME                       HOST/PORT                                                   PATH      SERVICES                   PORT      TERMINATION
+camel-springboot-rest-os   camel-springboot-rest-os-springboot.192.168.42.111.xip.io             camel-springboot-rest-os   <all>      
+```
+
+To invoke the Rest endpoint of your camel microservice every 1 second:
 
 ```sh
 watch -n1 -c ab -n 10 http://camel-springboot-rest-os-springboot.192.168.42.111.xip.io/api/persons/Abel
